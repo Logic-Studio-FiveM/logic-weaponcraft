@@ -1,5 +1,6 @@
 local Config <const> = {
     Log = true,
+    Debug = true,
 
     BlacklistedJobs = { 
         ["police"] = true, 
@@ -95,13 +96,49 @@ local Config <const> = {
     Farming = {
         Animation = {
             Enabled = true,
-            Dictionary = 'anim@heists@box_carry@',
-            Name = 'idle'
+            Dictionary = 'random@mugging3', 
+            Name = 'pickup_low' 
         },
 
         Zones = {
-            { Id = 'farming:scrapmetal', Position = vec3(2868.8532714844, 2793.927734375, 33.753345489502), Distance = 10, Item = 'scrapmetal', Label = "Récupérer du métal" },
-            { Id = 'farming:water', Position = vec3(2868.8532714844, 2793.927734375, 33.753345489502), Distance = 10, Item = 'water', Label = "Récupérer de l'eau" },
+            { 
+                Position = vec3(2854.7783203125, 2812.9565429688, 33.352336883545), 
+                Size = vec3(5, 5, 5), 
+                Rotation = 45, 
+                Duration = 2000,
+                Distance = 10, 
+                Item = 'scrapmetal', 
+                Label = "Récupérer du métal",
+                ItemCount = 1,
+                TextUI = {
+                    position = 'right-center', -- 'right-center' or 'left-center' or 'top-center' or 'bottom-center'
+                    icon = 'fa-solid fa-cube',
+                    style = {
+                        borderRadius = 2,
+                        backgroundColor = '#161616',
+                        color = 'white'
+                    }
+                }
+            },
+            { 
+                Position = vec3(2870.9887695312, 2812.748046875, 33.352409362793), 
+                Size = vec3(5, 5, 5), 
+                Rotation = 45, 
+                Duration = 5000,
+                Distance = 10, 
+                Item = 'water', 
+                Label = "Récupérer de l'eau",
+                ItemCount = 4,
+                TextUI = {
+                    position = 'right-center',
+                    icon = 'fa-solid fa-water',
+                    style = {
+                        borderRadius = 5,
+                        backgroundColor = '#114da4',
+                        color = 'white'
+                    }
+                }
+            },
         }
     }
 }

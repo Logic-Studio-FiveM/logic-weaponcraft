@@ -92,3 +92,55 @@ function pedPoints:onExit()
         targetCreated = false
     end
 end
+
+for i = 1, #Config.Farming.Zones do
+    local data = Config.Farming.Zones[i]
+    local zoneName = "zone_" .. data.Item
+
+    local zoneName = lib.zones.box({
+        coords = data.Position,
+        size = data.Size,
+        rotation = data.Rotation,
+        debug = Config.Debug,
+        inside = function()
+            if IsControlJustPressed(0, 51) then
+                if lib.progressActive() then return end
+
+                lib.requestAnimDict(Config.Farming.Animation.Dictionary)
+                FreezeEntityPosition(PlayerPedId(), true)
+
+                if lib.progressCircle({
+                    duration = data.Duration,
+                    position = 'bottom',
+                    useWhileDead = false,
+                    canCancel = true,
+                    disable = {
+                        car = true,
+                    },
+                    anim = {
+                        dict = Config.Farming.Animation.Dictionary,
+                        clip = Config.Farming.Animation.Name
+                    },
+                }) then 
+                    print('Do stuff when complete') 
+                    ClearPedTasks(PlayerPedId())
+                    FreezeEntityPosition(PlayerPedId(), false)
+                else 
+                    Logger('trace', 'You have cancelled the progress')
+                    ClearPedTasks(PlayerPedId())
+                    FreezeEntityPosition(PlayerPedId(), false)
+                end
+            end
+        end,
+        onEnter = function()
+            Logger('trace', 'You have entered the ' .. data.Item .. ' zone')
+            lib.showTextUI('[E] - ' .. data.Label, data.TextUI)
+        end,
+        onExit = function()
+            Logger('trace', 'You have left the ' .. data.Item .. ' zone')
+            lib.hideTextUI()
+        end
+    })
+
+    Logger('trace', ('The %s zone has been created'):format(data.Item))
+end
