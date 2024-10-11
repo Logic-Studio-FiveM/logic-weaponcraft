@@ -1,1 +1,1 @@
-# logic-weaponcraft
+# Advanced Weapon Craft for FiveM
