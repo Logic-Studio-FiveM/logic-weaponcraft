@@ -9,7 +9,7 @@ version '1.0.0'
 shared_scripts {
     '@es_extended/imports.lua',
     '@ox_lib/init.lua',
-    'shared/configuration.lua'
+    'shared/config.lua'
 }
 
 server_scripts {
@@ -28,6 +28,6 @@ dependencies {
 }
 
 escrow_ignore {
-    'shared/configuration.lua',
+    'shared/config.lua',
     'shared/server_config.lua'
 }
