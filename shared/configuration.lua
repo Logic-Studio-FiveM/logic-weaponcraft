@@ -89,6 +89,31 @@ local Config <const> = {
                         Quantity = 4
                     }
                 }
+            },
+            ['weapon_sawnoffshotgun'] = {
+                Title = "Construction d\'un fusil à pompe",
+                Image = 'https://www.vespura.com/fivem/weapons/images/WEAPON_SAWNOFFSHOTGUN.png',
+                TimeForCraft = 10000,
+                Icon = 'fa-solid fa-gun',
+                IconColor = 'blue',
+                Requirements = {
+                    ['scrapmetal'] = {
+                        Label = "Métal",
+                        Quantity = 100
+                    },
+                    ['money'] = {
+                        Label = "Argent",
+                        Quantity = 2000
+                    },
+                    ['water'] = {
+                        Label = "Eau",
+                        Quantity = 4
+                    },
+                    ['bread'] = {
+                        Label = "Pain",
+                        Quantity = 2
+                    }
+                }
             }
         }
     },
@@ -106,7 +131,6 @@ local Config <const> = {
                 Size = vec3(5, 5, 2), 
                 Rotation = 45, 
                 Duration = 2000,
-                Distance = 10, 
                 Item = 'scrapmetal', 
                 Label = "Récupérer du métal",
                 ItemCount = 1,
@@ -135,6 +159,25 @@ local Config <const> = {
                         borderRadius = 5,
                         backgroundColor = '#114da4',
                         color = 'white'
+                    }
+                }
+            },
+
+            { 
+                Position = vec3(2866.3083496094, 2804.91796875, 33.656467437744), 
+                Size = vec3(5, 5, 2), 
+                Rotation = 45, 
+                Duration = 1000,
+                Item = 'bread', 
+                Label = "Récupérer du pain",
+                ItemCount = 10,
+                TextUI = {
+                    position = 'left-center',
+                    icon = 'fa-solid fa-water',
+                    style = {
+                        borderRadius = 15,
+                        backgroundColor = '#114da4',
+                        color = 'red'
                     }
                 }
             },
