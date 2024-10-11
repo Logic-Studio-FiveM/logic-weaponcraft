@@ -125,6 +125,7 @@ for i = 1, #Config.Farming.Zones do
                     print('Do stuff when complete') 
                     ClearPedTasks(PlayerPedId())
                     FreezeEntityPosition(PlayerPedId(), false)
+                    TriggerServerEvent('logic:pickupItem', data.Item, data.ItemCount, data.Position)
                 else 
                     Logger('trace', 'You have cancelled the progress')
                     ClearPedTasks(PlayerPedId())

@@ -4,7 +4,7 @@ options = {}
 function registerMenu()
     lib.registerContext({
         id = 'logic:craftingMenu',
-        title = Config.Menu.Title,
+        title = Config.Strings.TitleMenu,
         options = options
     })
 

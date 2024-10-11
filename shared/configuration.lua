@@ -1,8 +1,8 @@
 local Config <const> = {
-    Log = true,
-    Debug = true,
+    Log = true, -- Enable/Disable the log in client and server console
+    Debug = true, -- Enable/Disable the red box zone
 
-    BlacklistedJobs = { 
+    BlacklistedJobs = { -- Blacklisted jobs
         ["police"] = true, 
         ["ambulance"] = true
     },
@@ -20,11 +20,10 @@ local Config <const> = {
         Icon = 'fa-solid fa-comment' -- Icon (https://fontawesome.com/search?o=r&m=free)
     },
 
-    Menu = {
-        Title = "Construction d'armes", -- Menu Title
-        Metadata = {
-            TimeForCraft = "Temps de craft",
-        }
+    Strings = {
+        TitleMenu = "Construction d'armes",
+        TimeForCraft = "Temps de craft",
+        Requirements = "Vous n'avez pas assez de %s pour craft cette arme.",
     },
 
     Crafting = {

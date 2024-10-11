@@ -2,7 +2,7 @@ RegisterNetEvent('logic:openCraftingMenu', function()
     if not menuRegistered then
         for weaponName, weaponData in pairs(Config.Crafting.Weapons) do
             local metadata = {
-                {label = Config.Menu.Metadata.TimeForCraft, value = weaponData.TimeForCraft / 1000 .. 'seconde'}
+                {label = Config.Strings.TimeForCraft, value = weaponData.TimeForCraft / 1000 .. 'seconde'}
             }
 
             for itemName, itemData in pairs(weaponData.Requirements) do
