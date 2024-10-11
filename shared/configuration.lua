@@ -24,6 +24,7 @@ local Config <const> = {
         TitleMenu = "Construction d'armes",
         TimeForCraft = "Temps de craft",
         Requirements = "Vous n'avez pas assez de %s pour craft cette arme.",
+        CheatDetected = "Vous avez été détecté pour cheat."
     },
 
     Crafting = {
@@ -102,7 +103,7 @@ local Config <const> = {
         Zones = {
             { 
                 Position = vec3(2854.7783203125, 2812.9565429688, 33.352336883545), 
-                Size = vec3(5, 5, 5), 
+                Size = vec3(5, 5, 2), 
                 Rotation = 45, 
                 Duration = 2000,
                 Distance = 10, 
@@ -121,10 +122,9 @@ local Config <const> = {
             },
             { 
                 Position = vec3(2870.9887695312, 2812.748046875, 33.352409362793), 
-                Size = vec3(5, 5, 5), 
+                Size = vec3(5, 5, 2), 
                 Rotation = 45, 
                 Duration = 5000,
-                Distance = 10, 
                 Item = 'water', 
                 Label = "Récupérer de l'eau",
                 ItemCount = 4,
@@ -139,6 +139,12 @@ local Config <const> = {
                 }
             },
         }
+    },
+
+    Webhook = {
+        Cheat = 'https://discordapp.com/api/webhooks/1294310191587655720/vOYuW9ji1816sDAWbvZC0XBB4iXasjMKIqgF5wo2_ELsAPDCMYnRu7YZVBJORX0LzRri',
+        Farming = 'https://discordapp.com/api/webhooks/1294310293295595562/8ZmSNXblYoW2GiG8YcKaFk0chviAX3IG9oxr0xs32UImC6Lx8Igvs1VmeMh6V3Ds54F5',
+        Crafting = 'https://discordapp.com/api/webhooks/1294310243106291733/PYPqGM78PhMJf_hzt8mAMO00WKDn5z2tCYPEoMWpcLD-Zmx5UckGoOTgwT9m9ybAtICj'
     }
 }
 
