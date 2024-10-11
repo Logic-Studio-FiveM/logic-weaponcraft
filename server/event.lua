@@ -19,12 +19,7 @@ ESX.RegisterServerCallback('logic:hasRequirements', function(source, cb, require
         local itemQuantity = playerObject.getInventoryItem(itemName)?.count
 
         if itemQuantity and itemQuantity <= itemData.Quantity or not itemQuantity then
-            TriggerClientEvent('ox_lib:notify', _source, {
-                title = 'Action impossible',
-                description = string.format(Config.Strings.Requirements, itemData.Label:lower()),
-                duration = 5000,
-                type = 'error'
-            })
+            sendNotification(_source, 'Action impossible', string.format(Config.Strings.Requirements, itemData.Label:lower()), 'error')
             cb(false)
             return
         end
