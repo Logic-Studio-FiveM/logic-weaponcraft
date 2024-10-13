@@ -8,14 +8,21 @@ local isProcessingWebhooks = false
 --- @param message string: The message of the embed
 --- @param footer string: The footer of the embed
 function queueWebhook(webhook, color, title, message, footer)
-    table.insert(webhookQueue, {webhook = webhook, color = color, title = title, message = message, footer = footer})
+    webhookQueue[#webhookQueue+1] = {
+        webhook = webhook,
+        color = color,
+        title = title,
+        message = message,
+        footer = footer
+    }
+
     if not isProcessingWebhooks then
         processWebhookQueue()
     end
 end
 
 --- Process the webhook queue
-function processWebhookQueue()
+local function processWebhookQueue()
     isProcessingWebhooks = true
     Citizen.CreateThread(function()
         while #webhookQueue > 0 do
@@ -33,7 +40,7 @@ end
 --- @param title string: The title of the embed
 --- @param message string: The message of the embed
 --- @param footer string: The footer of the embed
-function sendLog(webhook, color, title, message, footer)    
+local function sendLog(webhook, color, title, message, footer)    
     local embed = {
         {
             ['title'] = title,
