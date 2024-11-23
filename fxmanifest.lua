@@ -26,8 +26,3 @@ dependencies {
     'ox_target',
     'es_extended'
 }
-
-escrow_ignore {
-    'shared/config.lua',
-    'shared/server_config.lua'
-}
